@@ -13,7 +13,7 @@ from typing import Any, Dict, List
 
 import pytest
 
-from py_pkg.curves import SupplyCurve, DemandCurve
+from quant_test.curves import SupplyCurve, DemandCurve
 
 
 def load_test_data() -> List[Dict[str, Any]]:

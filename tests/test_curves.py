@@ -10,10 +10,10 @@ from copy import deepcopy
 
 import pytest
 
-from py_pkg.curves import (SupplyCurve, DemandCurve, Equilibrium,
-                           SupplyMonotonicityError, DemandMonotonicityError,
-                           equil_price, equil_price_ranges, HorizPriceShock,
-                           PriceRanges)
+from quant_test.curves import (SupplyCurve, DemandCurve, Equilibrium,
+                               SupplyMonotonicityError, DemandMonotonicityError,
+                               equil_price, equil_price_ranges, HorizPriceShock,
+                               PriceRanges)
 
 
 class TestSupplyCurve:
@@ -125,7 +125,7 @@ class TestDemandCurve:
 class TestCurveAnalytics:
     """Test suite for analytics involving supply and demand curves"""
 
-    def test_equilibrium_price(self, supply_curve: SupplyCurve, 
+    def test_equilibrium_price(self, supply_curve: SupplyCurve,
                                demand_curve: DemandCurve):
         """test equilibrium price calculation."""
         assert equil_price(supply_curve, demand_curve) == 9000
@@ -154,7 +154,7 @@ class TestCurveAnalytics:
         assert price_diffs == pytest.approx(econ_shock.demand_shock)
         assert isinstance(shifted_demand_curve, DemandCurve)
 
-    def test_equilibrium(self, supply_curve: SupplyCurve, 
+    def test_equilibrium(self, supply_curve: SupplyCurve,
                          demand_curve: DemandCurve):
         """Test Equilibrium class interface."""
         equilibrium = Equilibrium(supply_curve, demand_curve)
@@ -164,7 +164,7 @@ class TestCurveAnalytics:
         assert equilibrium.supply_q == 3
         assert equilibrium.demand_q == 5
 
-    def test_equilibrium_comparison(self, supply_curve: SupplyCurve, 
+    def test_equilibrium_comparison(self, supply_curve: SupplyCurve,
                                     demand_curve: DemandCurve):
         """Test Equilibrium object comparison."""
         assert (Equilibrium(supply_curve, demand_curve)

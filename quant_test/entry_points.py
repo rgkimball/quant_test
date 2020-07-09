@@ -1,8 +1,8 @@
 """
-py_pkg.entry_points.py
+quant_test.entry_points.py
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This module contains the entry-point functions for the py_pkg module,
+This module contains the entry-point functions for the quant_test module,
 that are referenced in setup.py.
 """
 
@@ -24,9 +24,9 @@ def main() -> None:
         if user_cmd == 'install':
             install_template_from_github()
         else:
-            RuntimeError('please supply a command for py_pkg - e.g. install.')
+            RuntimeError('please supply a command for quant_test - e.g. install.')
     except IndexError:
-        RuntimeError('please supply a command for py_pkg - e.g. install.')
+        RuntimeError('please supply a command for quant_test - e.g. install.')
     return None
 
 
@@ -40,7 +40,7 @@ def install_template_from_github() -> None:
         return None
 
     # download ZIP archive of GitHub repository
-    url = 'https://github.com/AlexIoannides/py-package-template/archive/master.zip'
+    url = 'https://github.com/rgkimball/py-package-template/archive/master.zip'
     r = requests.get(url)
     with open('temp.zip', 'wb') as f:
         f.write(r.content)

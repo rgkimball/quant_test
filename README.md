@@ -71,7 +71,7 @@ The `entry_points.py` module is referenced in the `setup.py` file via the `entry
 
 ```python
 entry_points={
-    'console_scripts': ['py-package-template=py_pkg.entry_points:main'],
+    'console_scripts': ['py-package-template=quant_test.entry_points:main'],
 }
 ```
 
